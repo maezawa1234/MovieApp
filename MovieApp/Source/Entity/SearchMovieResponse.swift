@@ -9,5 +9,5 @@ import Foundation
 
 struct SearchResponse<Item: Decodable>: Decodable {
     let page: Int
-    let results: [Item]
+    let items: [Item]
 }
