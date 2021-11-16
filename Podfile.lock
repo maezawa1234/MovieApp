@@ -1,0 +1,20 @@
+PODS:
+  - APIKit (5.2.0)
+  - SwiftyJSON (4.3.0)
+
+DEPENDENCIES:
+  - APIKit (~> 5.0)
+  - SwiftyJSON (~> 4.0)
+
+SPEC REPOS:
+  trunk:
+    - APIKit
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  APIKit: 577bd933169bd289ad6a3fa77a62394eae761619
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+
+PODFILE CHECKSUM: b4a3694622a0d2f13851de647bf23355e4277c26
+
+COCOAPODS: 1.11.0.beta.2
