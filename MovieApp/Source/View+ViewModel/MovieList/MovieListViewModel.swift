@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import SwiftUI
+import APIKit
 
 final class MovieListViewModel: ObservableObject {
     
@@ -20,20 +21,14 @@ final class MovieListViewModel: ObservableObject {
     @Published private(set) var errorMessage: String? = nil
     @Published private(set) var isLoasing = false
     
-    // DisposeBag的なやつ
     private var cancellables = Set<AnyCancellable>()
     
     init(movieRepository: MovieRepositoryProtocol = MovieRepository()) {
         let searchEvent = searchButtonClickedInput
             .map { [unowned self] in self.searchBarText }
             .filter { !$0.isEmpty }
+            .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
             .removeDuplicates()
-//
-//        searchEvent
-//            .sink(receiveValue: {
-//                print("searchEvent: ", $0)
-//            })
-//            .store(in: &cancellables)
         
         let apiResponse = searchEvent
             .flatMap {
@@ -45,12 +40,16 @@ final class MovieListViewModel: ObservableObject {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
-                    ()
+                    print("finished")
+                    self.isLoasing = false
                 case .failure(let error):
-                    ()
+                    print("failure")
+                    print(error.localizedDescription)
+                    self.isLoasing = false
                 }
             }, receiveValue: { response in
                 print(response)
+                self.movies = response.results
             })
             .store(in: &cancellables)
     }

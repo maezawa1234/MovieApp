@@ -26,7 +26,7 @@ extension MovieAPI {
         let path: String = "search/movie"
         
         // MARK: - Queries
-        let language = "en-US"
+        let language = Language.japan.rawValue
         let query: String
         let includeAdult = true
         
@@ -42,4 +42,17 @@ extension MovieAPI {
             ]
         }
     }
+}
+
+// MARK: - MovieAPI
+extension MovieAPI {
+    private enum Language: String {
+        case englishUS = "en-US"
+        case japan = "ja-JP"
+    }
+}
+
+// MARK: - ImageBaseURL
+extension MovieAPI {
+    static let imageBaseURL = "https://image.tmdb.org/t/p/w500"
 }

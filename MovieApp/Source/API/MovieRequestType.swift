@@ -25,11 +25,20 @@ extension MovieRequestType where Response: Decodable {
         guard let data = object as? Data else {
             throw ResponseError.unexpectedObject(object)
         }
+        print(#function)
+        print(data)
         let decoder = JSONDecoder()
-        return try decoder.decode(Response.self, from: data)
+        do {
+            return try decoder.decode(Response.self, from: data)
+        } catch {
+            print(error)
+            throw error
+        }
     }
 
     func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
+        print("生データ表示")
+        print(object)
         let statusCode = urlResponse.statusCode
         guard case (200 ..< 300) = statusCode else {
             let json = JSON(object)

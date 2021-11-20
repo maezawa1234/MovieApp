@@ -6,7 +6,7 @@ target 'MovieApp' do
   use_frameworks!
 
   # Pods for MovieApp
-  pod 'APIKit', '~> 5.0'
+  pod 'APIKit'
   pod 'SwiftyJSON', '~> 4.0'
 
   target 'MovieAppTests' do

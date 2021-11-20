@@ -9,5 +9,13 @@ import Foundation
 
 struct SearchResponse<Item: Decodable>: Decodable {
     let page: Int
-    let items: [Item]
+    let results: [Item]
+    let totalResults: Int
+    let totalPages: Int
+    
+    private enum CodingKeys: String, CodingKey {
+        case page, results
+        case totalResults = "total_results"
+        case totalPages = "total_pages"
+    }
 }
