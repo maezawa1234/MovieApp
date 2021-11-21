@@ -42,7 +42,7 @@ struct Movie: Decodable, Identifiable {
 
 extension Movie {
     static let mock = Movie(id: 58,
-                             title: "Mock",
+                            title: "パイレーツ・オブ・カリビアン／生命の泉",
                             overview: "This is overview of this movie and about details ...",
                             releaseDate: "2021-12-11",
                             posterPath: "/bfTKq6mGHt2CzZlBU31JHF9bMog.jpg",

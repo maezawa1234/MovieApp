@@ -11,7 +11,7 @@ struct MovieSearchRowView: View {
     let movies: [Movie]
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Search")
+            Text("Popular")
                 .font(.headline)
                 .padding(.leading, 15)
                 .padding(.top, 5)
@@ -19,7 +19,7 @@ struct MovieSearchRowView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top, spacing: 0) {
                     ForEach(movies) { movie in
-                        NavigationLink(destination: MovieDetailView()) {
+                        NavigationLink(destination: MovieDetailView(viewModel: MovieDetailViewModel(with: movie))) {
                             MovieItemView(viewModel: MovieItemViewModel(movie: movie))
                         }
                     }

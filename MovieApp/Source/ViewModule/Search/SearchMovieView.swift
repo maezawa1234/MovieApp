@@ -1,5 +1,5 @@
 //
-//  MovieListView.swift
+//  SearchMovieView.swift
 //  MovieApp
 //
 //  Created by 前澤健一 on 2021/11/16.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct MovieListView: View {
+struct SearchMovieView: View {
 
-    @ObservedObject var viewModel: MovieListViewModel
+    @ObservedObject var viewModel: SearchMovieViewModel
 
     var body: some View {
         NavigationView {
@@ -31,8 +31,15 @@ struct MovieListView: View {
                 }
 
                 List {
-                    MovieSearchRowView(movies: viewModel.movies)
+                    ForEach(viewModel.movies) { movie in
+                        
+                        NavigationLink(destination: MovieDetailView(viewModel: MovieDetailViewModel(with: movie))) {
+                            SearchMovieCellView(viewModel: SearchMovieCellViewModel(with: movie))
+                        }
+                        
+                    }
                 }
+                .listStyle(.plain)
                 .navigationTitle(Text("Search Movie 🔍"))
             }
             
@@ -42,6 +49,6 @@ struct MovieListView: View {
 
 struct MovieListView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieListView(viewModel: MovieListViewModel())
+        SearchMovieView(viewModel: SearchMovieViewModel())
     }
 }

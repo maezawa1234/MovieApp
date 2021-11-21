@@ -1,5 +1,5 @@
 //
-//  MovieListViewModel.swift
+//  SearchMovieViewModel.swift
 //  MovieApp
 //
 //  Created by 前澤健一 on 2021/11/16.
@@ -10,7 +10,7 @@ import Combine
 import SwiftUI
 import APIKit
 
-final class MovieListViewModel: ObservableObject {
+final class SearchMovieViewModel: ObservableObject {
     
     // MARK: - Inputs
     var searchBarText: String = ""
