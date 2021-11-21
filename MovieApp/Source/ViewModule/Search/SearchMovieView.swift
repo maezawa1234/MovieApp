@@ -13,9 +13,7 @@ struct SearchMovieView: View {
 
     var body: some View {
         NavigationView {
-
             VStack {
-
                 HStack {
                     TextField("Search movies...", text: $viewModel.searchBarText)
                         .frame(height: 40)
@@ -36,13 +34,11 @@ struct SearchMovieView: View {
                         NavigationLink(destination: MovieDetailView(viewModel: MovieDetailViewModel(with: movie))) {
                             SearchMovieCellView(viewModel: SearchMovieCellViewModel(with: movie))
                         }
-                        
                     }
                 }
                 .listStyle(.plain)
                 .navigationTitle(Text("Search Movie 🔍"))
             }
-            
         }
     }
 }

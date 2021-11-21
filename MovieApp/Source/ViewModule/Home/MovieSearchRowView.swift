@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MovieSearchRowView: View {
     let movies: [Movie]
+
     var body: some View {
         VStack(alignment: .leading) {
             Text("Popular")

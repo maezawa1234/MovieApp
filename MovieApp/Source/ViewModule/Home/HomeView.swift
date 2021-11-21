@@ -12,7 +12,11 @@ struct HomeView: View {
         NavigationView {
             VStack {
                 List {
-                    MovieSearchRowView(movies: [.mock, .mock, .mock, .mock, .mock, .mock])
+                    MovieSearchRowView(movies: Array(repeating: .mock, count: 10))
+                    MovieSearchRowView(movies: Array(repeating: .mock, count: 10))
+                    MovieSearchRowView(movies: Array(repeating: .mock, count: 10))
+                    MovieSearchRowView(movies: Array(repeating: .mock, count: 10))
+                    MovieSearchRowView(movies: Array(repeating: .mock, count: 10))
                 }
                 .listStyle(.plain)
                 .navigationTitle(Text("Home"))

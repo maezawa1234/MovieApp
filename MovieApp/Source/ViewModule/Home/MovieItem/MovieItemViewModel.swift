@@ -8,6 +8,8 @@
 import SwiftUI
 
 final class MovieItemViewModel: ObservableObject {
+    
+    // MARK: - Property
     @Published var downloadData: Data? = nil
     let title: String
     private let url: String
@@ -23,11 +25,9 @@ final class MovieItemViewModel: ObservableObject {
     }
     
     private func downloadImageAsync(url: String) {
-        
         guard let imageURL = URL(string: url) else {
             return
         }
-        
         DispatchQueue.global().async {
             let data = try? Data(contentsOf: imageURL)
             DispatchQueue.main.async {

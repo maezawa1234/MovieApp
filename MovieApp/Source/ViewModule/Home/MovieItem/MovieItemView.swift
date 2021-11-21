@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct MovieItemView: View {
+    
+    // MARK: - Property
     @ObservedObject var viewModel: MovieItemViewModel
     
     var body: some View {
-        
         VStack(alignment: .leading) {
-            
             if let imageData = self.viewModel.downloadData {
                 if let image = UIImage(data: imageData) {
                     Image(uiImage: image).resizable()
@@ -35,7 +35,6 @@ struct MovieItemView: View {
                     .frame(width: 155, height: 155)
                     .cornerRadius(5)
             }
-            
             Text(viewModel.title)
                 .foregroundColor(.primary)
                 .font(.caption)

@@ -134,10 +134,18 @@
 			children = (
 				08AFE67227439D3000A1860D /* SearchMovieView.swift */,
 				08AFE66927438E3300A1860D /* SearchMovieViewModel.swift */,
+				08452BCB274A3B6800A307DC /* SearchMovieCell */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		08452BCB274A3B6800A307DC /* SearchMovieCell */ = {
+			isa = PBXGroup;
+			children = (
 				08452BC1274A1CF500A307DC /* SearchMovieCellView.swift */,
 				08452BC3274A1D5000A307DC /* SearchMovieCellViewModel.swift */,
 			);
-			path = Search;
+			path = SearchMovieCell;
 			sourceTree = "<group>";
 		};
 		0873D2032744163D002F75EB /* Detail */ = {
