@@ -15,8 +15,8 @@ final class MovieDetailViewModel: ObservableObject {
     
     init(with movie: Movie) {
         self.movie = movie
-        guard let posterPath = movie.posterPath else { return }
-        let posterImageURL = MovieAPI.imageBaseURL + posterPath
+        guard let backdropPath = movie.backdropPath else { return }
+        let posterImageURL = MovieAPI.imageBaseURL + backdropPath
         self.downloadImageAsync(url: posterImageURL)
     }
 

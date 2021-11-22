@@ -14,7 +14,6 @@ struct TabBarView: View {
                 .tabItem {
                     Label("Home", systemImage: "house.fill")
                 }
-            
             SearchMovieView(viewModel: SearchMovieViewModel())
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")

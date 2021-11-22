@@ -19,14 +19,14 @@ struct SearchMovieCellView: View {
                         .resizable()
                         .frame(width: 155, height: 155)
                         .cornerRadius(5)
-                        .background(Color.yellow)
+                        .background(Color.gray)
                 } else {
                     Image(uiImage: UIImage()).resizable()
                         .renderingMode(.original)
                         .resizable()
                         .frame(width: 155, height: 155)
                         .cornerRadius(5)
-                        .background(Color.yellow)
+                        .background(Color.gray)
                 }
             } else {
                 Image(uiImage: UIImage()).resizable()
@@ -34,7 +34,7 @@ struct SearchMovieCellView: View {
                     .resizable()
                     .frame(width: 155, height: 155)
                     .cornerRadius(5)
-                    .background(Color.yellow)
+                    .background(Color.gray)
             }
             
             VStack(alignment: .leading) {
@@ -43,18 +43,15 @@ struct SearchMovieCellView: View {
                 HStack {
                     Text(viewModel.releaseDate)
                         .foregroundColor(Color.gray)
-                    Spacer()
-                    Text(viewModel.popularity)
+                    Text(viewModel.originalLanguage)
                         .foregroundColor(Color.gray)
+                        .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 0))
                 }
                 Spacer()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             
             Spacer()
-            
-            Image(systemName: "star.fill")
-                .foregroundColor(.yellow)
             
         }
     }
@@ -63,6 +60,6 @@ struct SearchMovieCellView: View {
 struct SearchMovieCellView_Previews: PreviewProvider {
     static var previews: some View {
         SearchMovieCellView(viewModel: SearchMovieCellViewModel(with: .mock))
-            .previewLayout(.fixed(width: 400, height: 150))
+            .previewLayout(.fixed(width: 500, height: 150))
     }
 }

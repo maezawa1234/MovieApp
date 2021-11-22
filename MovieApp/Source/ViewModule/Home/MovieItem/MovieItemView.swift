@@ -36,8 +36,10 @@ struct MovieItemView: View {
                     .cornerRadius(5)
             }
             Text(viewModel.title)
+                .frame(width: 155)
                 .foregroundColor(.primary)
                 .font(.caption)
+                .lineLimit(2)
         }
         .padding(.leading, 15)
     }

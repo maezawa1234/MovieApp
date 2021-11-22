@@ -13,12 +13,12 @@ final class SearchMovieCellViewModel: ObservableObject {
     @Published private(set) var downloadData: Data?
     let title: String
     let releaseDate: String
-    let popularity: String
+    let originalLanguage: String
     
     init(with movie: Movie) {
         self.title = movie.title
         self.releaseDate = movie.releaseDate ?? "nil"
-        self.popularity = "\(movie.popularity)"
+        self.originalLanguage = movie.originalLanguage
         guard let posterPath = movie.posterPath else { return }
         let posterImageURL = MovieAPI.imageBaseURL + posterPath
         print("url", posterImageURL)
